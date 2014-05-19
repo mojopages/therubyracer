@@ -247,7 +247,7 @@ module V8
             @native.Enter()
             yield if block_given?
           ensure
-            @native.Exit()
+            @native.Exit() unless @native.blank?
           end
         end
       end
